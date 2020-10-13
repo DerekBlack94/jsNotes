@@ -55,7 +55,41 @@ console.log(typeof first)
 let animal = 'dog';
 
 console.log('i have a ' + animal);
-console.log`T have a ${ animal};
 
 
-//**
+
+
+ let frodo = {
+     race: 'Hobbit',
+     rings: 1,
+     isShort: true,
+
+ };
+
+ console.log(frodo)
+
+ //* ARRAYS
+
+ let tacos = ['large', 4, true];
+
+ console.log(tacos);
+ console.log(typeof tacos )
+
+
+ //* STRING PROPERTIES AND METHODS
+
+ let myName = 'Derek';
+ //*console.log(name.length)
+
+ console.log(myName.toUpperCase());
+
+ let home  =  'My home is Fishers';
+ console.log(home.includes('Fishers'));
+
+ 
+
+ //* Mini Challenge 2
+
+ const str = "This sentence will be split into individual parts";
+ const splits = str.split(' ');
+ console.log(splits);

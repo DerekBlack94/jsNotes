@@ -17,6 +17,6 @@ for (let i in name)(
         capName = name[i].Uppercase();
 
     } else {
-        capName += name[i].toLowerCase();
+        capName += name[i].toLowerCase()
     }
 )
