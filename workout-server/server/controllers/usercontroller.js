@@ -9,7 +9,7 @@ const { response } = require('express');
 
 //* SIGN UP
 
-router.post('/create', async (req, res) => {
+router.post('/register', async (req, res) => {
     let {userName, password} = req.body;
 
     try {
@@ -19,7 +19,8 @@ router.post('/create', async (req, res) => {
         })
         res.status(201).json({
             message: "User registerd!",
-            user: newUser
+            user: newUser,
+            
         })
     } catch (error) {
         if (error instanceof UniqueConstraintError){

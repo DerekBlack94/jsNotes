@@ -4,7 +4,7 @@ const {Log} = require('../models');
 const validateSession = require('../middleware/validateSession')
 
 router.get("/", (req, res) =>{
-    Log.findAll()
+    Log.findAll( { where: {owner: req.user.id}})
     .then(log => res.status(200).json(log))
     .catch(err => res.status(500).json({
         error: err
@@ -22,17 +22,27 @@ router.post('/create', validateSession, (req, res) => {
     .catch(err => res.status(500).json({error: err}))
 });
     //**Get by id */
-
+    
+    
+    //**Get Mine */
+    
     router.get("/mine", validateSession, (req, res) => {
-        let userid = req.user.id
-        Log.findAll({
-            where: { owner: userid }
-        })
+        //let userid = req.user.id
+        //console.log(userid);
+        Log.findAll({where:{owner:req.user.id}})
         .then(log => res.status(200).json(log))
         .catch(err => res.status(500).json({ error: err}))
     });
-
+    
+    router.get('/:id', (req, res) => {
+        Log.findOne( { where: { id: req.params.id }})
+         .then(log => res.status(200).json(log))
+          .catch(err => res.json(err))
+     
+      })
     //** Log update */
+
+    
 
     router.put("/update/:entryId", validateSession, function (req, res) {
         const updateLogEntry = {

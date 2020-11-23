@@ -1,4 +1,4 @@
 const User = require('./user');
-const Log = require('./Log')
+const Log = require('./log')
 
 module.exports = {User, Log}

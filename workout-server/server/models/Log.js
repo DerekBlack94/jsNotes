@@ -1,5 +1,5 @@
 const {DataTypes} = require('sequelize');
-const db = require('')
+const db = require('../db');
 
 const Log = db.define('workoutlog', {
     description: {
@@ -16,8 +16,8 @@ const Log = db.define('workoutlog', {
     },
     owner: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        unique: true
+        allowNull: false
+        
 
     }
 })

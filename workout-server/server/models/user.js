@@ -1,5 +1,5 @@
 const{DataTypes} = require('sequelize');
-const db = require();
+const db = require('../db');
 
 const User = db.define('user', {
     userName: {
@@ -7,7 +7,7 @@ const User = db.define('user', {
         allowNull: false,
         unique: true
     },
-    passwordHash: {
+    password: {
         type: DataTypes.STRING,
         allowNull: false
     }
